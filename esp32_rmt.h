@@ -32,22 +32,22 @@ extern "C" {
 
 class ESP32_RMT
 {
-	public:
-		uint16_t result;
-		ESP32_RMT(int recievePin);
-		void irRecieve();	
-		
-	private:
-		void nec_fill_item_level(rmt_item32_t* ,int ,int);
-		void nec_fill_item_header(rmt_item32_t* );
-		void nec_fill_item_bit_one(rmt_item32_t* );
-		void nec_fill_item_bit_zero(rmt_item32_t*);
-		void nec_fill_item_end(rmt_item32_t* );
-		bool nec_check_in_range(int, int, int);
-		bool nec_header_if(rmt_item32_t*);
-		bool nec_bit_one_if(rmt_item32_t*);
-		bool nec_bit_zero_if(rmt_item32_t*);
-		int nec_parse_items(rmt_item32_t*, int, uint16_t*, uint16_t*);
-		int nec_build_items(int , rmt_item32_t* , int , uint16_t , uint16_t);	
-		void nec_rx_init(int);
+public:
+	uint16_t result;
+	ESP32_RMT(int recievePin);
+	void irRecieve();	
+	
+private:
+	void nec_fill_item_level(rmt_item32_t* ,int ,int);
+	void nec_fill_item_header(rmt_item32_t* );
+	void nec_fill_item_bit_one(rmt_item32_t* );
+	void nec_fill_item_bit_zero(rmt_item32_t*);
+	void nec_fill_item_end(rmt_item32_t* );
+	bool nec_check_in_range(int, int, int);
+	bool nec_header_if(rmt_item32_t*);
+	bool nec_bit_one_if(rmt_item32_t*);
+	bool nec_bit_zero_if(rmt_item32_t*);
+	int nec_parse_items(rmt_item32_t*, int, uint16_t*, uint16_t*);
+	int nec_build_items(int , rmt_item32_t* , int , uint16_t , uint16_t);	
+	void nec_rx_init(int);
 };
