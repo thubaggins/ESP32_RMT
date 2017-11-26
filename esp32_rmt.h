@@ -35,7 +35,7 @@ class ESP32_RMT
 	public:
 		uint16_t result;
 		ESP32_RMT(int recievePin);
-    	void irRecieve();	
+		void irRecieve();	
 		
 	private:
 		void nec_fill_item_level(rmt_item32_t* ,int ,int);
