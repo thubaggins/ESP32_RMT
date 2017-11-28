@@ -67,6 +67,11 @@ bool ESP32_RMT::nec_header_if(rmt_item32_t* item)
         && nec_check_in_range(item->duration1, NEC_HEADER_LOW_US, NEC_BIT_MARGIN)) {
         return true;
     }
+    else if((item->level0 == RMT_RX_ACTIVE_LEVEL && item->level1 != RMT_RX_ACTIVE_LEVEL)
+        && nec_check_in_range(item->duration0, NEC_HEADER_HIGH_US2, NEC_BIT_MARGIN)
+        && nec_check_in_range(item->duration1, NEC_HEADER_LOW_US, NEC_BIT_MARGIN)) {
+        return true;
+    }    
     return false;
 }
 

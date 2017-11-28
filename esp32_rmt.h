@@ -18,6 +18,7 @@ extern "C" {
 #define RMT_TICK_10_US    (80000000/RMT_CLK_DIV/100000)   /*!< RMT counter value for 10 us.(Source clock is APB clock) */
 
 #define NEC_HEADER_HIGH_US    9050                         /*!< NEC protocol header: positive 9ms */
+#define NEC_HEADER_HIGH_US2   4550                         /*!< NEC protocol header: positive 9ms */
 #define NEC_HEADER_LOW_US     4510                         /*!< NEC protocol header: negative 4.5ms*/
 #define NEC_BIT_ONE_HIGH_US    560                         /*!< NEC protocol data bit 1: positive 0.56ms */
 #define NEC_BIT_ONE_LOW_US    (2250-NEC_BIT_ONE_HIGH_US)   /*!< NEC protocol data bit 1: negative 1.69ms */
